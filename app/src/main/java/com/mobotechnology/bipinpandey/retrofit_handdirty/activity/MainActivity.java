@@ -59,13 +59,9 @@ public class MainActivity extends AppCompatActivity {
     /** Method to generate List of notice using RecyclerView with custom adapter*/
     private void generateNoticeList(ArrayList<Notice> empDataList) {
         recyclerView = findViewById(R.id.recycler_view_employee_list);
-
         adapter = new NoticeAdapter(empDataList);
-
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
-
         recyclerView.setLayoutManager(layoutManager);
-
         recyclerView.setAdapter(adapter);
     }
 
