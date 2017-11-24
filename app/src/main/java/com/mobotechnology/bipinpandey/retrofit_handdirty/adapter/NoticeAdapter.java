@@ -11,7 +11,7 @@ import com.mobotechnology.bipinpandey.retrofit_handdirty.model.Notice;
 
 import java.util.ArrayList;
 
-public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.EmployeeViewHolder> {
+public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeViewHolder> {
 
     private ArrayList<Notice> dataList;
 
@@ -20,14 +20,14 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.EmployeeVi
     }
 
     @Override
-    public EmployeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public NoticeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.single_view_row, parent, false);
-        return new EmployeeViewHolder(view);
+        return new NoticeViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(EmployeeViewHolder holder, int position) {
+    public void onBindViewHolder(NoticeViewHolder holder, int position) {
         holder.txtNoticeTitle.setText(dataList.get(position).getTitle());
         holder.txtNoticeBrief.setText(dataList.get(position).getBrief());
         holder.txtNoticeFilePath.setText(dataList.get(position).getFileSource());
@@ -38,11 +38,11 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.EmployeeVi
         return dataList.size();
     }
 
-    class EmployeeViewHolder extends RecyclerView.ViewHolder {
+    class NoticeViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtNoticeTitle, txtNoticeBrief, txtNoticeFilePath;
 
-        EmployeeViewHolder(View itemView) {
+        NoticeViewHolder(View itemView) {
             super(itemView);
             txtNoticeTitle =  itemView.findViewById(R.id.txt_notice_title);
             txtNoticeBrief =  itemView.findViewById(R.id.txt_notice_brief);
